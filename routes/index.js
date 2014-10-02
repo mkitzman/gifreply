@@ -3,8 +3,8 @@ var router = express.Router();
 
 var Flickr = require("flickrapi"),
     flickrOptions = {
-      api_key: "580a1c9e12b3b569ef072287fd449f60",
-      'user_id': '123475630@N06'
+      api_key: "",
+      'user_id': ''
     };
 
 /* GET home page. */
