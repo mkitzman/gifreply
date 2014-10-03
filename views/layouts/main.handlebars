@@ -6,7 +6,15 @@
 </head>
 <body>
     {{#each user_photos}}
-        <img class="{{tags}}" data-original-image="{{url_o}}" src="{{url_q}}" >
+        <button class="copy-button" data-clipboard-text="{{url_o}}" title="Click to copy me.">
+            <img class="{{tags}}" data-original-image="{{url_o}}" src="{{url_q}}" >
+        </button>
     {{/each}}
+
+    <script src="javascripts/ZeroClipboard.js"></script>
+    <script type="text/javascript">
+        var client = new ZeroClipboard();
+        var client = new ZeroClipboard(document.getElementsByClassName("copy-button"));
+    </script>
 </body>
 </html>
