@@ -2,8 +2,9 @@
 var express = require('express'),
     router = express.Router(),
     Flickr = require("flickrapi"),
+    api_key = require("../cfg/api_key.js").api_key;
     flickrOptions = {
-        "api_key": "580a1c9e12b3b569ef072287fd449f60",
+        "api_key": api_key,
         "user_id": "123475630@N06"
     };
 
