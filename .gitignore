@@ -5,5 +5,5 @@ pkg/
 *.swp
 .DS_Store
 node_modules/
-cfg/api_key.js
+cfg/flickr.js
 .log
