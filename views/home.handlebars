@@ -1,11 +1,21 @@
-{{#each user_photos}}
-    <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">
-        <img class="gif {{tags}}" data-static-image="{{url_q}}" data-original-image="{{url_o}}" src="{{url_q}}">
-    </button>
-{{/each}}
+<div class="ui-widget">
+  <label for="tags">Tags: </label>
+  <input id="tags-search" >
+  <button id="reset-search">Clear</button>
+  <h6 class="current-search"></h6>
+</div>
 
+<ul id="images" data-tag-list="{{#each tags}}{{this}} {{/each}}">
+{{#each user_photos}}
+    <li class="gif-container {{tags}}">
+        <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">
+            <img class="gif" data-static-image="{{url_q}}" data-original-image="{{url_o}}" src="{{url_q}}">
+        </button>
+    </li>
+{{/each}}
+</ul>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <script src="javascripts/ZeroClipboard.js"></script>
-<script type="text/javascript">
-    var client = new ZeroClipboard();
-    var client = new ZeroClipboard(document.getElementsByClassName("copy-button"));
-</script>
+<script src="javascripts/site.js"></script>

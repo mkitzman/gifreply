@@ -1,4 +1,4 @@
-/*global module, require,  */
+/*global module, require, console  */
 var express = require('express'),
     router = express.Router(),
     Flickr = require("flickrapi"),
@@ -20,10 +20,28 @@ router.get('/', function(req, res) {
             per_page: 500,
             extras: 'url_o,url_q,tags'
         }, function(err, result) {
+            
+            var tags = [],
+            i,
+            j,
+            mini_array;
+
+            for (i in result.photos.photo) {
+                mini_array = result.photos.photo[i].tags.split(" ");
+    
+                for(j=0; j < mini_array.length; j++) {
+                    if(tags.indexOf(mini_array[j])) {
+                        console.log(mini_array[j]);
+                        tags.push(mini_array[j]);
+                    }
+                }
+
+            }
 
             res.render('home', {
-                title: 'hi',
-                user_photos: result.photos.photo
+                title: 'Gifreply',
+                user_photos: result.photos.photo,
+                tags: tags
             });
         });
     });
