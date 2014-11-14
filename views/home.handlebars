@@ -1,18 +1,18 @@
 <div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <input id="tags-search" >
-  <button id="reset-search">Clear</button>
-  <h6 class="current-search"></h6>
+    <label for="tags-search">Tags: </label>
+    <input id="tags-search" type="text" placeholder="Tags" aria-required="true">
+    <button id="reset-search">Clear</button>
+    <h6 class="current-search"></h6>
 </div>
 
-<ul id="images" data-tag-list="{{#each tags}}{{this}} {{/each}}">
-{{#each user_photos}}
-    <li class="gif-container {{tags}}">
-        <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">
-            <img class="gif" data-static-image="{{url_q}}" data-original-image="{{url_o}}" src="{{url_q}}">
-        </button>
-    </li>
-{{/each}}
+<ul id="images-list" data-tag-list="{{#each tags}}{{this}} {{/each}}">
+    {{#each user_photos}}
+        <li class="image-container {{tags}}">
+            <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">
+                <img data-static-image="{{url_q}}" data-original-image="{{url_o}}" src="{{url_q}}">
+            </button>
+        </li>
+    {{/each}}
 </ul>
 
 <script src="//code.jquery.com/jquery-1.10.2.js"></script>
