@@ -26,12 +26,12 @@ router.get('/', function(req, res) {
             j,
             mini_array;
 
+            //create an array of tags for search
             for (i in result.photos.photo) {
                 mini_array = result.photos.photo[i].tags.split(" ");
     
                 for(j=0; j < mini_array.length; j++) {
                     if(tags.indexOf(mini_array[j])) {
-                        console.log(mini_array[j]);
                         tags.push(mini_array[j]);
                     }
                 }
