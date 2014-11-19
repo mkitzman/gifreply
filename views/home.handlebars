@@ -1,14 +1,14 @@
 <div class="Main">
     <div class="ui-widget">
         <input id="tags-search" type="text" placeholder="Tags" aria-required="true">
-        <button id="reset-search">Clear</button>
+        <button class="reset-search">Clear</button>
         <dl class="search-status">
             <dt>Current Search:</dt>
             <dd class="current-search"></dd>
         </ul>
     </div>
 
-    <ul id="images-list" data-tag-list="{{#each tags}}{{this}} {{/each}}">
+    <ul class="images-list" data-tag-list="{{#each tags}}{{this}} {{/each}}">
         {{#each user_photos}}
             <li class="image-container {{tags}}">
                 <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">

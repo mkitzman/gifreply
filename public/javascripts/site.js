@@ -27,7 +27,7 @@ $(function() {
 
     'use strict';
 
-    var availableTags = document.getElementById("images-list").getAttribute('data-tag-list').split(" ");
+    var availableTags = document.getElementsByClassName("images-list")[0].getAttribute('data-tag-list').split(" ");
     
     $( "#tags-search" ).autocomplete({
         source: availableTags,
@@ -60,7 +60,7 @@ $(function() {
 });
 
 /* Clear Hidden elements and tag searched text on clear button click */
-document.getElementById("reset-search").addEventListener("click", function clear() {
+document.getElementsByClassName("reset-search")[0].addEventListener("click", function clear() {
 
     'use strict';
 
