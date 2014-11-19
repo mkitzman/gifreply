@@ -31,13 +31,13 @@ router.get('/', function(req, res) {
                 mini_array = result.photos.photo[i].tags.split(" ");
     
                 for(j=0; j < mini_array.length; j++) {
-                    if(tags.indexOf(mini_array[j])) {
+                    if(tags.indexOf(mini_array[j]) === -1) {
                         tags.push(mini_array[j]);
                     }
                 }
 
             }
-
+ 
             res.render('home', {
                 title: 'Gifreply',
                 user_photos: result.photos.photo,
