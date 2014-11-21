@@ -13,11 +13,11 @@ showImages = function() {
     
     'use strict';
     var i,
-        hidden_photos = document.querySelectorAll('.image-container.hidden');
+        hidden_photos = document.querySelectorAll('.image-container.fadeOutLeft');
 
     if(hidden_photos) {
         for (i = 0; i < hidden_photos.length; ++i) {
-            hidden_photos[i].classList.remove('hidden');
+            hidden_photos[i].classList.remove('fadeOutLeft');
         }
     }
 };
@@ -47,7 +47,7 @@ $(function() {
             els = document.querySelectorAll(tag);
 
             for (j = 0; j < els.length; ++j) {
-                els[j].classList.add('hidden');
+                els[j].classList.add('fadeOutLeft');
             }
 
             //Display the tag searched
