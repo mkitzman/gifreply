@@ -21,6 +21,8 @@ showImages = function() {
             hidden_photos[i].classList.add('fadeIn');
         }
     }
+
+    document.querySelector('.search-status').classList.remove('show-current-search');
 };
 
 /* Auto Complete */
@@ -63,7 +65,7 @@ $(function() {
 
             //Display the tag searched
             document.querySelector('.current-search').innerHTML = ui.item.value;
-            
+            document.querySelector('.search-status').classList.add('show-current-search');
             //Clear search field so you can immediately type in more search terms
             $(this).val(''); return false;
         }
