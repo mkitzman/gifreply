@@ -10,7 +10,7 @@
 
     <ul class="images-list" data-tag-list="{{#each tags}}{{this}} {{/each}}">
         {{#each user_photos}}
-            <li class="image-container {{tags}}">
+            <li class="image-container fadeIn {{tags}}">
                 <button class="copy-button" data-clipboard-text="{{url_o}}" title="{{tags}}">
                     <img data-static-image="{{url_q}}" data-original-image="{{url_o}}" src="{{url_q}}">
                 </button>

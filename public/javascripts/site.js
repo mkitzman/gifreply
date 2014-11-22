@@ -13,11 +13,12 @@ showImages = function() {
     
     'use strict';
     var i,
-        hidden_photos = document.querySelectorAll('.image-container.fadeOutLeft');
+        hidden_photos = document.querySelectorAll('.image-container.imageHidden');
 
     if(hidden_photos) {
         for (i = 0; i < hidden_photos.length; ++i) {
             hidden_photos[i].classList.remove('fadeOutLeft');
+            hidden_photos[i].classList.add('fadeIn');
         }
     }
 };
@@ -47,8 +48,18 @@ $(function() {
             els = document.querySelectorAll(tag);
 
             for (j = 0; j < els.length; ++j) {
+                els[j].classList.remove('fadeIn');
                 els[j].classList.add('fadeOutLeft');
             }
+
+            setTimeout(function(){
+                //ZeroClipboard won't work with the extra css effects on the node so remove it
+                for (j = 0; j < els.length; ++j) {
+                    els[j].classList.remove('fadeOutLeft');
+                    els[j].classList.add('imageHidden');
+                }
+                console.log('remove');
+            },500);
 
             //Display the tag searched
             document.querySelector('.current-search').innerHTML = ui.item.value;
