@@ -7,10 +7,10 @@ gifreply is a simple express app that will fetch images from Flickr, let you sea
 Set Up:
 
 1. In you bash profile file you will need to add two environment variables
-
+```
 export FLICKR_API_KEY=<YOUR FLICKR API KEY>
 export FLICKR_USER_ID=<YOUR FLICKR USER ID>
-
+```
 2. git clone git@github.com:mkitzman/gifreply.git
 
 3. cd gifreply && npm install
