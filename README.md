@@ -19,3 +19,6 @@ export FLICKR_USER_ID=<YOUR FLICKR USER ID>
 4. npm start
 
 5. In browser got to http://localhost:3000/
+
+!['Screenshot of gifreply'](http://i.imgur.com/7KR3LFA.png)
+
