@@ -2,22 +2,26 @@
 ### Flickr powered animated gifs for online conversations
 
 
-gifreply is a simple express app that will fetch images from Flickr, let you search tags and one click copy the url of the image.
+A simple express app that will fetch images from Flickr, let you search their tags and one click copy the url of the image.
 
 Set Up:
-
-1. In you bash profile file you will need to add two environment variables
+In you bash profile file you will need to add two Flickr environment variables for the account of the images you want.
 ```
 export FLICKR_API_KEY=<YOUR FLICKR API KEY>
 export FLICKR_USER_ID=<YOUR FLICKR USER ID>
 ```
-2. git clone git@github.com:mkitzman/gifreply.git
+Get the code and install packages
+```
+git clone git@github.com:mkitzman/gifreply.git
+cd gifreply && npm install
+```
 
-3. cd gifreply && npm install
+Start the app up
+```
+npm start
+```
 
-4. npm start
-
-5. In browser got to http://localhost:3000/
+In browser got to http://localhost:3000/
 
 !['Screenshot of gifreply'](http://i.imgur.com/7KR3LFA.png)
 
