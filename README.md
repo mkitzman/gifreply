@@ -1,6 +1,6 @@
 #gifreply
 ### Flickr powered animated gifs for online conversations
-========
+
 
 gifreply is a simple express app that will fetch images from Flickr, let you search tags and one click copy the url of the image.
 
