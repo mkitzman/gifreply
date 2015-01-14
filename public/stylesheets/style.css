@@ -44,11 +44,17 @@ ul {
 .search-status dd {
     margin: 0px;
 }
+
 .reset-search {
     background-color: #fc1685;
     border-radius: .2em;
     color: #fff;
     padding: .2em .9em;
+    opacity: 0;
+    transition: 0.5s;
+}
+.reset-search.show-reset {
+    opacity: 1;
 }
 
 .images-list .hidden {

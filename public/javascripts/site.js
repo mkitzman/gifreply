@@ -1,17 +1,17 @@
-/*global ZeroClipboard, console, document, $,   */
+/*global ZeroClipboard, console, document, $, setTimeout   */
 /*jslint plusplus: true */
-
-
 var client, showImages;
 
 /* click to clip boared */
 client = new ZeroClipboard();
 client = new ZeroClipboard(document.getElementsByClassName("copy-button"));
 
-//Function to find all hidden images and show them
+/* Show Hidden images */
+/* Function to find all hidden images and show them */
 showImages = function() {
     
     'use strict';
+
     var i,
         hidden_photos = document.querySelectorAll('.image-container.imageHidden');
 
@@ -23,7 +23,22 @@ showImages = function() {
     }
 
     document.querySelector('.search-status').classList.remove('show-current-search');
+    document.querySelector('.reset-search').classList.remove('show-reset');
+
 };
+
+
+/* Reset Search */
+/* Clear Hidden elements and taga searched text on clear button click */
+document.getElementsByClassName("reset-search")[0].addEventListener("click", function clear() {
+
+    'use strict';
+
+    showImages();
+    document.querySelector('.current-search').innerHTML = '';
+
+});
+
 
 /* Auto Complete */
 $(function() {
@@ -60,23 +75,15 @@ $(function() {
                     els[j].classList.remove('fadeOutLeft');
                     els[j].classList.add('imageHidden');
                 }
-                console.log('remove');
             },500);
 
             //Display the tag searched
             document.querySelector('.current-search').innerHTML = ui.item.value;
             document.querySelector('.search-status').classList.add('show-current-search');
+            document.querySelector('.reset-search').classList.add('show-reset');
+
             //Clear search field so you can immediately type in more search terms
             $(this).val(''); return false;
         }
     });
-});
-
-/* Clear Hidden elements and tag searched text on clear button click */
-document.getElementsByClassName("reset-search")[0].addEventListener("click", function clear() {
-
-    'use strict';
-
-    showImages();
-    document.querySelector('.current-search').innerHTML = '';
 });
