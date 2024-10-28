@@ -1,6 +1,7 @@
 #gifreply
 ### Flickr powered animated gifs for online conversations
 
+!['Screenshot of gifreply'](http://i.imgur.com/7KR3LFA.png)
 
 A simple express app that will fetch images from Flickr, let you search their tags and one click copy the url of the image.
 
@@ -23,5 +24,5 @@ npm start
 
 In browser got to http://localhost:3000/
 
-!['Screenshot of gifreply'](http://i.imgur.com/7KR3LFA.png)
+
 
